@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+artifacts/
+
+dist/
+*.tsbuildinfo
+
+# Private design, discussions, reviews, and implementation history.
+DEVELOPMENT_NOTES.md

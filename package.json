@@ -1,0 +1,27 @@
+{
+  "name": "saas-incremental",
+  "version": "0.16.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "check": "npm run format:check && npm run typecheck && node --check src/game.js && node --check src/app.js && node --check src/state.js && node --check src/persistence.js && npm test",
+    "test:browser": "node tools/early-game-review.mjs",
+    "format": "prettier --write src tests tools vite.config.ts tsconfig.json package.json index.html",
+    "format:check": "prettier --check src tests tools vite.config.ts tsconfig.json package.json index.html",
+    "test:static": "npm run build && node tools/static-smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "prettier": "3.9.10",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  },
+  "engines": {
+    "node": ">=24.4.0"
+  }
+}
